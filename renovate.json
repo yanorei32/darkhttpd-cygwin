@@ -7,7 +7,7 @@
       "matchFileNames": [
         "darkhttpd.cygport"
       ],
-      "extractVersion": "v(?<version>.*?)"
+      "extractVersion": "v(?<version>.+)"
     }
   ],
   "customManagers": [
@@ -17,7 +17,7 @@
         "darkhttpd.cygport"
       ],
       "matchStrings": [
-        "VERSION=(?<currentValue>.*?)"
+        "VERSION=(?<currentValue>.+)"
       ],
       "depNameTemplate": "emikulic/darkhttpd",
       "versioningTemplate": "docker",
