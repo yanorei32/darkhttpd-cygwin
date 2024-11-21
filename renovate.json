@@ -4,7 +4,7 @@
   ],
   "packageRules": [
     {
-      "fileMatch": [
+      "matchFileNames": [
         "darkhttpd.cygport"
       ],
       "extractVersion": "v(?<version>.*?)"
