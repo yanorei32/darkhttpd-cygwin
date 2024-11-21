@@ -89,19 +89,12 @@ install() {
 
     echo "done."
 }
+
 uninstall() {
     echo -n $"Uninstalling $prog daemon: "
     stop
     cygrunsrv --remove $prog
     echo "done."
-}
-reload() {
-    echo -n $"Reloading $prog daemon configuration: "
-    /usr/bin/kill -USR1 `cat "$DARKHTTPD_PIDFILE"`
-    RETVAL=$?
-    [ $RETVAL -eq 0 ] && echo "done."
-    RETVAL=$?
-    return $RETVAL
 }
 
 case "$1" in
@@ -113,9 +106,6 @@ case "$1" in
     ;;
   restart)
     restart
-    ;;
-  reload)
-    reload
     ;;
   install)
     install
