@@ -1,0 +1,20 @@
+--- origsrc/darkhttpd-1.16-1.x86_64/CYGWIN-PATCHES/darkhttpd.c	2024-02-29 07:45:12.000000000 +0900
++++ src/darkhttpd-1.16-1.x86_64/CYGWIN-PATCHES/darkhttpd.c	2024-11-21 10:06:36.346686400 +0900
+@@ -1544,14 +1544,15 @@ static char *urldecode(const char *url) {
+     ((hex) >= 'a' && (hex) <= 'f') ? ((hex)-'a'+10): \
+     ((hex)-'0') )
+
+-            out[pos++] = HEX_TO_DIGIT(url[i+1]) * 16 +
++            out[pos] = HEX_TO_DIGIT(url[i+1]) * 16 +
+                          HEX_TO_DIGIT(url[i+2]);
+             i += 2;
+ #undef HEX_TO_DIGIT
+         } else {
+             /* straight copy */
+-            out[pos++] = url[i];
++            out[pos] = url[i];
+         }
++        out[pos++] = out[pos] == '\\' ? '/' : out[pos];
+     }
+     out[pos] = '\0';
+     return out;
