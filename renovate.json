@@ -1,11 +1,16 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["darkhttpd.cygport"],
-      "matchStrings": ["GH_VERSION=\"(?<currentValue>.*?)\""],
+      "customType": "regex",
+      "fileMatch": [
+        "darkhttpd.cygport"
+      ],
+      "matchStrings": [
+        "GH_VERSION=\"(?<currentValue>.*?)\""
+      ],
       "depNameTemplate": "emikulic/darkhttpd",
       "versioningTemplate": "docker",
       "datasourceTemplate": "github-releases"
