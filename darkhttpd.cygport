@@ -1,0 +1,31 @@
+NAME="darkhttpd"
+VERSION=1.16
+RELEASE=1
+CATEGORY="Web"
+SUMMARY="darkhttpd When you need a web server in a hurry."
+
+HOMEPAGE="https://unix4lyfe.org/darkhttpd/"
+LICENSE="ISC"
+SRC_URI="https://github.com/emikulic/darkhttpd/archive/refs/tags/v${VERSION}.tar.gz"
+SRC_URI+=" darkhttpd.init darkhttpd.sysconfig"
+
+src_compile() {
+	lndirs
+	cd "${B}"
+	cygmake
+}
+
+PKG_NAMES="darkhttpd"
+darkhttpd_CONTENTS="
+	usr/bin
+	usr/share/doc
+	etc/sysconfig
+"
+
+src_install() {
+	cd "${B}"
+	dobin "${S}/darkhttpd.init" "${B}/darkhttpd.exe"
+
+	insinto /etc/sysconfig
+	newins ${S}/darkhttpd.sysconfig darkhttpd
+}

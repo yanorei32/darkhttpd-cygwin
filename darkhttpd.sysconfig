@@ -1,0 +1,5 @@
+# DARKHTTPD_PIDFILE=/var/run/darkhttpd.pid
+# DARKHTTPD_LOG=/var/log/darkhttpd.log
+# DARKHTTPD_ROOT="/var/www"
+# DARKHTTPD_FLAGS="--port 80"
+
