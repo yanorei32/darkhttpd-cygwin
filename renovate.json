@@ -4,7 +4,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["build.sh"],
+      "fileMatch": ["darkhttpd.cygport"],
       "matchStrings": ["GH_VERSION=\"(?<currentValue>.*?)\""],
       "depNameTemplate": "emikulic/darkhttpd",
       "versioningTemplate": "docker",
