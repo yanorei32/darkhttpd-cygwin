@@ -8,6 +8,7 @@ HOMEPAGE="https://unix4lyfe.org/darkhttpd/"
 LICENSE="ISC"
 SRC_URI="https://github.com/emikulic/darkhttpd/archive/refs/tags/v${VERSION}.tar.gz"
 SRC_URI+=" darkhttpd.init darkhttpd.sysconfig"
+PATCH_URI="fix-directory-traversal-in-cygwin.patch"
 
 src_compile() {
 	lndirs
