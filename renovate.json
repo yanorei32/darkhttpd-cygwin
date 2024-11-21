@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["build.sh"],
+      "matchStrings": ["GH_VERSION=\"(?<currentValue>.*?)\""],
+      "depNameTemplate": "emikulic/darkhttpd",
+      "versioningTemplate": "docker",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
