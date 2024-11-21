@@ -1,6 +1,6 @@
 NAME="darkhttpd"
 
-VERSION="1.16"
+VERSION="1.15"
 RELEASE=1
 CATEGORY="Web"
 SUMMARY="darkhttpd When you need a web server in a hurry."
